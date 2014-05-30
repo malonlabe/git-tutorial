@@ -1,0 +1,45 @@
+[user]
+	name = Yuriy Senishch 
+	email = yuriy.senishch@ge.com	
+
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+
+[difftool "kdiff3"]
+	cmd = diff.sh \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
+
+[alias]
+	dt = difftool
+	dp = diff HEAD~1 HEAD
+	dh = difftool HEAD~1 HEAD
+	d = diff
+	s = status
+	wc = whatchanged
+	b = branch -a
+	l = log --pretty=oneline	
+	h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+[color]
+	ui = true
+
+[merge]
+	tool = DiffMerge
+
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = true
+
+[credential]
+	helper = !\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
+
+[difftool "ExamDiff"]
+	path = C:/Program Files/Diff/ExamDiff.exe
+
+[difftool "kdiff3"]
+	path = C:/Program Files (x86)/KDiff3/kdiff3.exe
+

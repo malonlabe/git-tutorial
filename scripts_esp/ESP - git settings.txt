@@ -1,0 +1,20 @@
+-----------------------
+- check all GIT settings :
+config --list
+
+- check if 'autocrlf' set to true in GIT:
+git config --system --get-regexp autocrlf
+
+- set it to true:
+git config --system core.autocrlf true
+
+- and refresh git repo local:
+git reset --hard
+-----------------------
+Server name is: czc3025gt6.clients.em.health.ge.com
+Name of repository is: esp
+
+So the following command should work:
+git clone git@czc3025gt6.clients.em.health.ge.com:esp
+
+-------------------------------------

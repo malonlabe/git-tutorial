@@ -1,0 +1,185 @@
+
+Git (GitHub) howto.
+
+GET WHOLE REPO:
+from github to local directory:
+ >git clone https://github.com/MakSim345/QT-Dev.git
+ >git clone https://github.com/MakSim345/MS-VC08.git
+ >git clone https://github.com/MakSim345/Python.git 
+ >git clone https://github.com/MakSim345/arduino.git
+ >git clone https://github.com/MakSim345/cpp.git
+ >git clone https://github.com/MakSim345/CVS-repo.git //REM: move to bitbucket as cvs-repo!
+ >git clone https://github.com/MakSim345/git-tutorial.git
+ >git clone https://github.com/MakSim345/Java.git
+
+from bitbucket (private repos) to local directory:
+ >git clone https://MakSim345@bitbucket.org/MakSim345/mplab-dev.git 
+ >git clone https://MakSim345@bitbucket.org/MakSim345/cvs-repo.git
+ >git clone https://MakSim345@bitbucket.org/MakSim345/arduino.git //REM: removed or inactive!
+ >git clone https://MakSim345@bitbucket.org/MakSim345/maksim345.bitbucket.org.git
+ 
+from ESP repo:
+ >git clone git@czc3025gt6.clients.em.health.ge.com:esp <new_dir_name>
+
+___________________________________________
+To add to file .git/config :
+[user]
+    name = MakSim345
+    email = senishch@gmail.com
+___________________________________________
+- check all GIT settings :
+config --list
+
+- check if 'autocrlf' set to true in GIT:
+git config --system --get-regexp autocrlf
+
+- set it to true:
+git config --system core.autocrlf true
+
+- and refresh git repo local:
+git reset --hard
+___________________________________________
+
+ADD FOLDER TO a repo in github:
+ >git init (? do it once)
+ >git add Folder_Name
+ >git commit -a -m "comments are here!"
+ >git push
+
+AFTER CHANGES made on file:
+ >git add [filename]
+ >git commit -a -m "comments are here"
+ >git push
+   ... will ask password and username (maksim345 + 33k)
+
+GET UPDATES from github server:
+  >git pull
+
+TO DELETE/Remove folder:
+  >git rm -r one-of-the-directories
+  >git commit -m "Remove duplicated directory"
+  >git push origin master 
+  
+ - but to restore deleted file:
+  >git checkout (return name of deleted file)
+  >git checkout deleted_file.cpp
+
+TO DELETE/Remove files, what have been deleted:
+  >git add -u
+
+TO DELETE/Remove untracked files/folders:
+  >git clean -f(dx)
+  rem: 'dx' key will remove untracked folders as well! 
+
+RENAME:
+  >git mv oldfilename newfilename
+
+LOG:
+  >git log --pretty=oneline
+  >git log --pretty=oneline --graph
+  >git log --before="2 weeks ago" --after="2009-01-26" --pretty=oneline
+  >git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+  >git log --abbrev-commit --pretty=oneline
+
+
+DIFFTOOL (Linux)
+  >git config --global diff.tool vimdiff
+  >git config --global difftool.prompt false
+  >git config --global alias.d difftool
+
+SHOW CHANGES in exact commit:
+  >git show fe71281
+  REM: hex code is from beginning of commits hash!
+  REM: for hash you can use "history" or "hist" command.
+
+  >git log -p FILENAME
+
+SHOW CHANGES in file after "git add":
+  >git diff --cached FILENAME
+
+SHOW CHANGES between current repo and previous:
+  >git diff HEAD~1 HEAD
+  REM: HEAD~1 can have any number.
+
+SHOW last commit info:
+  >git show --summary
+  >git show --stat
+
+Revert all changes in working copy:
+  >git checkout .
+
+Revert changes in file:
+  >git checkout filename
+
+Revert changes in a file after ADD command:
+  >git reset HEAD <file>
+
+Revert all changes after ADD command:
+  >git reset HEAD
+
+GUI:
+  > gitk - will show a gui comit viewer.
+  > git gui - will show a simple git UI.
+___________________________________________
+
+Clone Repository from local disk to server:
+>cd /path/to/my/repo
+>git remote add origin https://MakSim345@bitbucket.org/MakSim345/cvs-repo.git
+>git push -u origin --all # pushes up the repo and its refs for the first time
+>git push -u origin --tags # pushes up any tags
+
+ATTN: This one is working:
+>git config remote.origin.url https://MakSim345@bitbucket.org/MakSim345/cvs-repo.git
+>git push -u origin master 
+
+>git config remote.origin.url https://github.com/MakSim345/git-tutorial.git
+>git push -u origin master 
+
+___________________________________________
+Branches:
+
+To shows you all branches in the remote:
+>git branch -a 
+
+If you just want to take a quick peek at an upstream branch, you can check it out directly:
+>git checkout origin/experimental
+
+But if you want to work on that branch, you''ll need to create a local tracking branch:
+>git checkout -b experimental origin/experimental
+ 
+___________________________________________
+Troubleshooting:
+1. To be able to login in Linux using https you should set your username to the git remote:
+
+  > git remote set-url origin https://yourusername@github.com/user/repo.git
+
+Than you will be asked for your password when tries to git push
+
+2. Forget unnecessary changes:
+  > git checkout -f
+
+3. 
+
+___________________________________________
+To mimic hg incoming:
+git log ..@{u}
+
+To mimic hg outgoing:
+git log @{u}..
+
+I use the following incoming and outgoing aliases to make the above easier to use:
+
+git config --global alias.incoming '!git remote update -p; git log ..@{u}'
+git config --global alias.outgoing 'log @{u}..'
+
+___________________________________________
+
+- how to use bisect:
+git bisect start HEAD origin/initial
+
+
+
+Various links:
+https://makandracards.com/makandra/topics/version-control
+http://githowto.com/ru
+http://gitimmersion.com/lab_01.html

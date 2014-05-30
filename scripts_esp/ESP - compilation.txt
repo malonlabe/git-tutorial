@@ -1,0 +1,81 @@
+ESP - compilation
+
+Executable file "S5Mon.exe" and all run-time files used to be in Image_Windows subdirectory. 
+Now they are in follow subdirectories:
+    Image_WINLITE, 
+    Image_WINMAX,
+    Image_WINPPD 
+
+ When you create the run-time files, instead of the old "MONITOR=Windows", you need to set:
+    MONITOR=WINMAX, 
+    MONITOR=WINLITE, 
+    MONITOR=WINPPD 
+
+------------------------
+MAR-2014
+Using PERL script.
+
+To create all ESP folders target tree, run
+from folder D:\dev\esp :
+   > build -setup
+
+To compile ESP (make exe file and all dependancy) from 'cmd':
+1. > set jobs=8 (number of cores)
+2. from folder D:\dev\esp5\Targets\WindowsDebug:
+   > omake -f ..\..\Msf\S5Mon\Code\makefile.mak monitor=WINMAX jobs=4 debug=3 
+OR run script:
+   > build -j 8
+REM: the target would be the same as folder name.
+
+to create RunTime libs, run in folder WindowsDebug:
+ > build -m max S5MonWindowsRunTime
+
+to generate VS2010 solution, run in folder VisualStudio:
+ > build  
+
+to avoid creating run time libs, use follow key:
+ > build -nrt
+------------------------
+General instruction:
+1. In folder 'vobs' (or root folder for GIT) create folder 'Targets'
+2. Inside Targets create folder 'WinPPDDebug' 
+3. Create Visual Studio project:
+    - in Targets (in 'vobs' or root?) folder
+    - run in cmd follow command:
+    For PPD:
+    > omake monitor=WINPPD -f ..\Msf\S5Mon\Code\makefile.mak VisualStudio
+    For Windows:
+    > omake monitor=WINMAX -f ..\Msf\S5Mon\Code\makefile.mak VisualStudio
+
+This will create folders:
+    - VisualStudio
+    - WindowsDebug
+
+4. in newly created folder 'VisualStudio' open solution 'esp.sln' and build it.
+if running app couse follow error:
+    "The program can't start because W32N50.dll is missing from you computer. 
+     Try reinstalling the program to fix this problem"
+     goto step 5
+5. in order to run app: 
+    - in Targets\WindowsDebug folder    
+    - Generate DLLs by command:
+    For PPD:
+    > omake monitor=WINPPD -f ..\..\Msf\S5Mon\Code\makefile.mak S5MonWindowsRunTime
+    For Windows:
+    > omake monitor=WINMAX -f ..\..\Msf\S5Mon\Code\makefile.mak S5MonWindowsRunTime
+    > build -m max S5MonWindowsRunTime
+
+6. Now you can run app, press F5 on VisualStudio;
+
+---------------------------------------
+
+VisualStudio simulation: add to project propery Debugging->Command arguments
+-simulate
+
+---------------------------------------
+obsolete:
+D:\dev\ESP_main_trunk\vobs\Targets\WinDebug\ (from this folder)
+omake monitor=Windows debug=1 -f ..\..\Msf\S5Mon\Code\makefile.mak
+
+D:\dev\ESP_main_trunk\vobs\Targets\WinPPDDebug\ (from this folder)
+omake monitor=winppd debug=1 -f ..\..\Msf\S5Mon\Code\makefile.mak

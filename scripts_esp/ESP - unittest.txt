@@ -1,0 +1,20 @@
+------------------
+unit test
+
+
+1. hardcore way:
+> omake monitor=winppd -f ..\..\..\..\..\..\..\Msf\Code\Msf\Default\DScreen\makefile.mak unittest 
+> omake monitor=winppd -f ..\..\..\..\..\..\..\Msf\Code\Msf\Default\DScreen\makefile.mak
+
+
+2. easy way:
+From a folder to be tested (for example 'D:\dev\esp5\Targets\WindowsDebug\Msf\Code\Msf\Alarms\AlarmsDefs')
+run follow:
+> build unittest
+
+REM: here will be called a Perl script, running unittest for current subsystem.
+
+---------------------------------------
+TODO:
+
+How to create unittest file template?

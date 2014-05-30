@@ -1,0 +1,7 @@
+1. Disable McAfee VirusScan:
+- mouse right button: Manage Features->VirusScan Enterprise
+- in VirusScan Console turn off "access protection"
+REM: it will enable itself again and again, so keep eye on it.
+
+2. 
+3. 

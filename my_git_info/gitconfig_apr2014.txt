@@ -1,0 +1,44 @@
+[user]
+	name = Yuriy Senishch
+	email = yuriy.senishch@ge.com
+[diff]
+	tool = kdiff3
+	guitool = beyondcompare3
+[difftool "kdiff3"]
+	cmd = diff.sh \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[alias]
+	dt = difftool
+	dp = diff HEAD~1 HEAD
+	dh = difftool HEAD~1 HEAD
+	d = diff
+	s = status
+	wc = whatchanged
+	b = branch -a
+	l = log --pretty=oneline	
+	h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[color]
+	ui = true
+[merge]
+	tool = BeyondCompare3
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = true
+[credential]
+	helper = !\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
+[difftool "ExamDiff"]
+	path = C:/Program Files/Diff/ExamDiff.exe
+[difftool "kdiff3"]
+	path = C:/Program Files (x86)/KDiff3/kdiff3.exe
+[difftool "BeyondCompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+[difftool "beyondcompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "BeyondCompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[http]
+	proxy = 3.187.157.236:9400

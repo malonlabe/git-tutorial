@@ -1,0 +1,51 @@
+MAr-2014
+
+Eclipse - Kepler.
+
+How to import existing GIT project, for example D:\dev\esp2 :
+
+0. Set default location as D:\dev
+1. Select File->New->Project
+2. Select General->Project, press Next
+3. Project name : esp2
+4. Press Finish
+5. In Project Explorer select in esp2: 'Convert to a C/C++ Project'
+6. In 'Project options' select 'Project type' as 'Makefile project' 
+7. In 'Toolchains:' select 'Microsoft Visual C++'
+8. Press Finish.
+9. Select 'property' for esp2. 
+10. Go to 'Resource->Resource Filters'. 
+11. Press 'Add'
+12. Select 'Include only'
+13. Select 'Applies to ... Folders'
+14. Add 'Msf' and 'Mdn' to 'Files and Foldes Attributes'
+15. Check 'Case sensitive'
+16. Press 'OK'.
+17. Note that 'Targets' folder disappeared from Project Explorer.
+
+______________________
+Note:
+- bookmarks are crap.
+
+
+______________________
+HOTO:
+- display a list of all the hotkeys in Eclipse:  Ctrl+Shift+L
+- goto last edit location: Ctrl+Q
+- show list of open Editors. Use arrow keys and enter to switch Ctrl+E
+______________________
+About Autocomplete:
+by default it is crap. Ctrl+space is most common use.
+Possible to use autohotkey:
+http://www.autohotkey.com/docs/Tutorial.htm
+http://www.autohotkey.com/board/topic/52546-automatic-content-assist-in-eclipse-and-ms-visual-studio-c/
+
+______________________
+Compilation:
+In Eclipse > Project > Properties > (C++ General)-> Paths and Symbols > Libraries tab, 
+enclose the path to the library in single quotes:
+
+'C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\Kernel32.Lib'
+
+There would be a warning that the path does not exist, but it should be gone 
+after you rebuild your project.
