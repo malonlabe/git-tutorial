@@ -14,6 +14,16 @@ run follow:
 
 REM: here will be called a Perl script, running unittest for current subsystem.
 
+    ___________________________________________
+
+To generate a coverage file for bullseye:
+From a folder to be tested (for example 'D:\dev\esp5\Targets\WindowsDebug\Msf\Code\Msf\DScreen')
+
+> build unittest -cov 
+
+(observe follow line in the output: "Command: cov01 -q --on")
+it will create a file which can be open with bullseye.
+
 ---------------------------------------
 TODO:
 

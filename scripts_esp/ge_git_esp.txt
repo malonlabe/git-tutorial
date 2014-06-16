@@ -1,6 +1,8 @@
 Hello,
 
-I’ve added your key now to Gitolite server and you should have read access. Because the integration is not implemented yet from git to ClearCase, the write access is prevented from everyone.
+I’ve added your key now to Gitolite server and you should have read access. 
+Because the integration is not implemented yet from git to ClearCase, 
+the write access is prevented from everyone.
 
 Server name is: czc3025gt6.clients.em.health.ge.com
 Name of repository is: esp
@@ -8,17 +10,21 @@ Name of repository is: esp
 So the following command should work:
 git clone git@czc3025gt6.clients.em.health.ge.com:esp
 
+___________________________________________
+how to get updates (avoid "git pull"):
+> git fetch
+> git rebase origin/task_alarm_context_menu_models 
+
+___________________________________________
+proxy settings:
+1. git config --global http.proxy 3.187.157.236:9400
+2. git config http.proxy 3.187.157.236:9400
 
 
-proxy:
-
-git config --global http.proxy 3.187.157.236:9400
-
-git config http.proxy 3.187.157.236:9400
-
-
+___________________________________________
 grep ERROR example.txt | wc -l
 REM: this count words ERROR in file example.txt.
 
+___________________________________________
 - how to use bisect:
 git bisect start HEAD origin/initial
