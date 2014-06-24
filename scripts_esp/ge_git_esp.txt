@@ -1,19 +1,23 @@
-Hello,
 
-I’ve added your key now to Gitolite server and you should have read access. 
-Because the integration is not implemented yet from git to ClearCase, 
-the write access is prevented from everyone.
+Gitolite server:
 
-Server name is: czc3025gt6.clients.em.health.ge.com
+Server name is: "czc3025gt6.clients.em.health.ge.com"
 Name of repository is: esp
 
-So the following command should work:
-git clone git@czc3025gt6.clients.em.health.ge.com:esp
+To clone the repo: 
+> git clone git@czc3025gt6.clients.em.health.ge.com:esp
 
 ___________________________________________
 how to get updates (avoid "git pull"):
+--for example local branch has name "task_screen_setup_17Feb2014_squashed"
+1. get changes:
 > git fetch
-> git rebase origin/task_alarm_context_menu_models 
+
+2. if any files was locally changed:
+> git rebase origin/task_screen_setup_17Feb2014_squashed
+
+3. if no files locally changed:
+> git reset --hard origin/task_screen_setup_17Feb2014_squashed
 
 ___________________________________________
 proxy settings:

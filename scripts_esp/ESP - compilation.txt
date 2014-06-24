@@ -2,9 +2,9 @@ ESP - compilation
 
 Executable file "S5Mon.exe" and all run-time files used to be in Image_Windows subdirectory. 
 Now they are in follow subdirectories:
-    Image_WINLITE, 
-    Image_WINMAX,
-    Image_WINPPD 
+    "Image_WINLITE" 
+    "Image_WINMAX"
+    "Image_WINPPD" 
 
  When you create the run-time files, instead of the old "MONITOR=Windows", you need to set:
     MONITOR=WINMAX, 
@@ -16,28 +16,35 @@ MAR-2014
 Using PERL script.
 
 To create all ESP folders target tree, run
-from folder D:\dev\esp :
+from folder D:\dev\esp 
    > build -setup
 
 To compile ESP (make exe file and all dependancy) from 'cmd':
 1. > set jobs=8 (number of cores)
-2. from folder D:\dev\esp5\Targets\WindowsDebug:
+2. from folder ...\Targets\WindowsDebug:
    > omake -f ..\..\Msf\S5Mon\Code\makefile.mak monitor=WINMAX jobs=4 debug=3 
-OR run script:
+OR run PERL script:
    > build -j 8
 REM: the target would be the same as folder name.
 
-For build PPD: in 'WindowsDebug' folder run follow.
+For build PPD: 
+1. goto 'WindowsDebug' folder 
+2. run:
 > build -m PPD
 
-to create RunTime libs, run in folder WindowsDebug:
+to create RunTime libs
+1. goto 'WindowsDebug' folder 
+2. run:
  > build -m max S5MonWindowsRunTime
 
-to generate VS2010 solution, run in folder VisualStudio:
- > build  
+to generate VS2010 solution:
+1. goto 'VisualStudio' folder 
+2. run:
+ > build
 
 to avoid creating run time libs, use follow key:
  > build -nrt
+
 ------------------------
 General instruction:
 1. In folder 'vobs' (or root folder for GIT) create folder 'Targets'
