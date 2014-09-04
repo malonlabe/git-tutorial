@@ -19,6 +19,31 @@ how to get updates (avoid "git pull"):
 3. if no files locally changed:
 > git reset --hard origin/task_screen_setup_17Feb2014_squashed
 
+
+___________________________________________
+Rebase:
+> git rebase -i origin/master
+    - this will run an "interactive" rebase, where you can choose what to do with commits and messages.
+
+___________________________________________
+Gerrit and Continuous Integration.
+
+info in wiki:
+
+"http://czc3025gt7.clients.em.health.ge.com:8080/wiki/index.php/Integrating_changes"
+
+How to push to gerrit.
+! REM: 
+    - before ":refs" there is hash or branch_name of the commit
+    - after "master" there is topic, some number from Rally system: "DE167"
+
+1. Use hash:
+> git push gerrit 909eb2ea4daac240a35c8d67087baeac9ad80c04:refs/publish/master/DE167
+
+2. use branch name:
+> git push gerrit task_crash_open_SpO2_alarms_menu_aug_2014:refs/publish/master/DE167
+
+
 ___________________________________________
 proxy settings:
 1. git config --global http.proxy 3.187.157.236:9400
