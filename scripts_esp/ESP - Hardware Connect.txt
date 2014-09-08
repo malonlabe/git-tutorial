@@ -1,0 +1,22 @@
+5-SEP-2014
+
+How to connect ESP external hardware
+
+1. Patient Simulator + PDM Frame + PDM 
+    - Patient Simulator: connect 5 cables to PDM
+    - PDM conect to PDM Frame
+    - PDM Frame LAN output connect with LAN cable to a LAN-USB Adapter
+    - The LAN-USB Adapter connect to USB Port on the target PC.
+    - Set properties for USB-LAN network : 
+        a) select ONLY TCP/IP v4 Protocol
+        b) IP Address:  192.168.252.1
+        c) Subnet Mask: 255.255.255.0
+        d) Gateway:    None
+        e) DNS:    None
+
+    - Run the DHCP server:
+        a) goto "C:\Program Files\Avaya\Avaya IP Agent"
+        b) run app named "IPAgent.exe"
+
+
+
