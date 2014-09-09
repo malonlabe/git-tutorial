@@ -20,3 +20,18 @@ How to connect ESP external hardware
 
 
 
+__________________________________________
+Connecting EMBC module frame to Windows version of ESP
+
+Installation
+
+See User Guide in ClearCase ESP_doc\documents\esp_v1\tools\ESP EMBC Guide.doc
+
+The guide recommends TFTPD32 as DHCP server. Only the mentioned beta version works with EMBC. All newer versions do not work. An alternative DHCP server is MultiDHCPServer. The binary is in 
+    "ClearCase ESP_tools\MultiDHCPServer\MultiDHCPServer\bin\Debug\MultiDHCPServer.exe."
+
+Note: The GE firewall McAfee Host Prevention causes some challenges to get the setup to work. The firewall blocks DHCP requests from the network although the McAfee engineering exception has been done. The work around is to rename the DHCP server and put it in a path the firewall policy allows communication with.
+
+For example: You can create a new directory like "C:\Program Files\Avaya\Avaya IP Agent" and copy "MultiDHCPServer.exe" into this directory and then rename it to "IPagent.exe". After that, start "IPagent.exe" as a DHCP server and then it should be able connect to your EMBC frame from Windows ESP. 
+
+
