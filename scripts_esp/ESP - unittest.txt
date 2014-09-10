@@ -1,5 +1,12 @@
-------------------
-unit test
+
+unit test using CMAKE
+
+- run follow:
+> ninja unittest
+
+___________________________________________
+unit test using OMAKE
+# obsolete SEP-2014.
 
 
 1. hardcore way:
@@ -14,7 +21,7 @@ run follow:
 
 REM: here will be called a Perl script, running unittest for current subsystem.
 
-    ___________________________________________
+___________________________________________
 
 To generate a coverage file for bullseye:
 From a folder to be tested (for example 'D:\dev\esp5\Targets\WindowsDebug\Msf\Code\Msf\DScreen')
@@ -24,7 +31,7 @@ From a folder to be tested (for example 'D:\dev\esp5\Targets\WindowsDebug\Msf\Co
 (observe follow line in the output: "Command: cov01 -q --on")
 it will create a file which can be open with bullseye.
 
----------------------------------------
+___________________________________________
 TODO:
 
 How to create unittest file template?

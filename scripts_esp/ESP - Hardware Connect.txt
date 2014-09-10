@@ -34,4 +34,11 @@ Note: The GE firewall McAfee Host Prevention causes some challenges to get the s
 
 For example: You can create a new directory like "C:\Program Files\Avaya\Avaya IP Agent" and copy "MultiDHCPServer.exe" into this directory and then rename it to "IPagent.exe". After that, start "IPagent.exe" as a DHCP server and then it should be able connect to your EMBC frame from Windows ESP. 
 
+__________________________________________
+how to connect external device: 
+- from networking property remove all instances except TCP/IPv4
+- set ip address: 192.168.252.1
+- add subnet mask 255.255.255.0
+- run "multi DHCP server"
 
+__________________________________________

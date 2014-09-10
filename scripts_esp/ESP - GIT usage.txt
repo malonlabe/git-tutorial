@@ -27,9 +27,13 @@ Rebase:
 ___________________________________________
 Gerrit and Continuous Integration.
 
-info in wiki:
 
+info in wiki:
 "http://czc3025gt7.clients.em.health.ge.com:8080/wiki/index.php/Integrating_changes"
+
+Clone from ESP repo:
+ >git clone git@czc3025gt6.clients.em.health.ge.com:esp <new_dir_name>
+ >git clone ssh://git@czc3025gt6.clients.em.health.ge.com/csp-tools.git
 
 How to push to gerrit.
 ! REM: 
@@ -47,14 +51,27 @@ Integration, step by step:
 
 > git add .
 > git commit -m "comment"
+
+# This command will run an "interactive" rebase, where you can choose what to do with 
+# commits and messages. So, choose 'f' in for last commit in new opened window.
 > git rebase -i origin/master
-      // 'this will run an "interactive" rebase, where you can choose what to do with commits and messages.'
-      // 'so, choose 'f' in for last commit in new opened window.'
-> git fetch // 'this will load all changes from remote'
+
+#This will load all changes from remote:
+> git fetch 
 > git rebase origin/master
-// 'After all review was OK, push to master for gerrit and gitolite:'
+
+ #After all review was OK, push to master for gerrit AND gitolite:
 > git push gerrit task_crash_open_SpO2_alarms_menu_aug_2014:master
 > git push origin task_crash_open_SpO2_alarms_menu_aug_2014:master
+
+___________________________________________
+To create new working branch "task_new_branch_name":
+
+> git branch task_new_branch_name
+
+To change pointer to the branch:
+
+> git checkout task_new_branch_name
 
 
 ___________________________________________

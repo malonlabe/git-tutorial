@@ -1,4 +1,31 @@
 ESP - compilation
+___________________________________________
+CMAKE:
+1. With PERL script.
+- use PERL script "esp_builder.pl" from git repo named "csp-tools";
+- add path to script "esp_builder.pl" to a file "build.bat";
+- palce file "build.bat" to folder "C:\bin", where all binary are;
+- in ESP root directory run:
+    > build -c 
+# it will create     
+
+
+2. Simple 'bat' files.
+- create folder "build" in ESP root directory;
+- goto "build" and create folder "WindowsDebug";
+- goto "WindowsDebug" and run:
+    > cmake -G Ninja ../..
+# it will create all service files for compilation.
+- in "WindowsDebug" folder run:
+    > ninja
+    or
+    > ninja -j 8 # for set number of cores used for building.
+# this will start actual building and create executable files S5Mon.exe for MAX, etc.
+
+Problems:
+ - no VisualStudio solution creating by cmake.
+___________________________________________
+OMAKE (obsolete from SEP-2014):
 
 Executable file "S5Mon.exe" and all run-time files used to be in Image_Windows subdirectory. 
 Now they are in follow subdirectories:
@@ -11,7 +38,7 @@ Now they are in follow subdirectories:
     MONITOR=WINLITE, 
     MONITOR=WINPPD 
 
-------------------------
+___________________________________________
 MAR-2014
 Using PERL script.
 
@@ -45,7 +72,7 @@ to generate VS2010 solution:
 to avoid creating run time libs, use follow key:
  > build -nrt
 
-------------------------
+___________________________________________
 General instruction:
 1. In folder 'vobs' (or root folder for GIT) create folder 'Targets'
 2. Inside Targets create folder 'WinPPDDebug' 
@@ -77,12 +104,12 @@ if running app couse follow error:
 
 6. Now you can run app, press F5 on VisualStudio;
 
----------------------------------------
+___________________________________________
 
 VisualStudio simulation: add to project propery Debugging->Command arguments
 -simulate
 
----------------------------------------
+___________________________________________
 obsolete:
 D:\dev\ESP_main_trunk\vobs\Targets\WinDebug\ (from this folder)
 omake monitor=Windows debug=1 -f ..\..\Msf\S5Mon\Code\makefile.mak
