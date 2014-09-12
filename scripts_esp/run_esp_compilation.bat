@@ -1,15 +1,18 @@
 @ECHO OFF
 REM
-REM compile ESP project PPD in command line
-REM shall be called from 'Targets\WinPPDDEbug' folder    
-REM Yuriy Senishch. FEB-2014
+REM Script compiles ESP project from command line
+REM using CMake and ninja.
+REM
+REM Yuriy Senishch. SEP-2014
 REM
 @echo off
 
 REM set number of CPU for parallel compilation:
 REM set jobs=4
 set CPU_TO_USE=8
+:: -j 8
 set COMPILER=ninja
+set CMAKE_COMPILER=Ninja
 
 if -%1==- goto NoParam
 goto START 
@@ -19,8 +22,8 @@ goto START
 :START
 
 call TDiff.exe
-REM omake monitor=winppd debug=1 -f ..\..\Msf\S5Mon\Code\makefile.mak
-call %COMPILER%
+::call cmake -G %CMAKE_COMPILER% ../..  
+call %COMPILER% -j %CPU_TO_USE%
 call TDiff.exe
 goto END
 

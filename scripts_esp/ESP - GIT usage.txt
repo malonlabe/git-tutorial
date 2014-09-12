@@ -6,6 +6,8 @@ Name of repository is: esp
 
 To clone the repo: 
 > git clone git@czc3025gt6.clients.em.health.ge.com:esp
+> git clone git@czc3025gt6.clients.em.health.ge.com:esp <new_dir_name>
+> git clone ssh://git@czc3025gt6.clients.em.health.ge.com/csp-tools.git
 
 ___________________________________________
 how to get updates (avoid "git pull"):
@@ -27,13 +29,8 @@ Rebase:
 ___________________________________________
 Gerrit and Continuous Integration.
 
-
 info in wiki:
 "http://czc3025gt7.clients.em.health.ge.com:8080/wiki/index.php/Integrating_changes"
-
-Clone from ESP repo:
- >git clone git@czc3025gt6.clients.em.health.ge.com:esp <new_dir_name>
- >git clone ssh://git@czc3025gt6.clients.em.health.ge.com/csp-tools.git
 
 How to push to gerrit.
 ! REM: 
