@@ -22,7 +22,6 @@ REM cd %DIR_TO_CREATE%
 
 call TDiff.exe
 call cmake -G "Visual Studio 10 2010" ..\..\
-call TDiff.exe
 
 :: check if esp.sln exist in current dir:
 if exist %TARGET_SLN% goto ESP_SLN_EXIST
@@ -44,5 +43,6 @@ pause>nul
 
 goto END
 
+call TDiff.exe
 :END
 
