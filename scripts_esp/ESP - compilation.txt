@@ -109,6 +109,9 @@ ___________________________________________
 VisualStudio simulation: add to project propery Debugging->Command arguments
 -simulate
 
+in S5Mon main project propery Debugging->Command arguments are:
+-pod -unid -screens 1
+
 ___________________________________________
 obsolete:
 D:\dev\ESP_main_trunk\vobs\Targets\WinDebug\ (from this folder)
