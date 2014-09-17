@@ -1,13 +1,30 @@
 ___________________________________________
 Integration, step by step:
 
+Add changes step by step 
+
+--for example local branch has name "task_screen_setup", and Rally number: "DE999"
+
+1. add files:
 > git add .
-> git commit -m "comment"
+
+2. commit chnges:
+> git commit - "add your comment here"
+
+3. merge commits to one (if any):
 > git rebase -i origin/master
-      // 'this will run an "interactive" rebase, where you can choose what to do with commits and messages.'
-      // 'so, choose 'f' in for last commit in new opened window.'
-> git fetch // 'this will load all changes from remote'
+
+4. get changes from repository:
+> git fetch
+
+5. rebase your changes to top of the repository:
 > git rebase origin/master
-// 'After all review was OK, push to master for gerrit and gitolite:'
-> git push gerrit task_crash_open_SpO2_alarms_menu_aug_2014:master
-> git push origin task_crash_open_SpO2_alarms_menu_aug_2014:master
+
+6. push changes to gerrit:
+> git push gerrit task_screen_setup:refs/publish/master/DE999
+
+7. wait for review/comments.
+
+8. After all review was OK, push to master for "gerrit" AND "gitolite":
+> git push gerrit task_screen_setup:master
+> git push origin task_screen_setup:master

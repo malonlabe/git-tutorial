@@ -10,16 +10,33 @@ To clone the repo:
 > git clone ssh://git@czc3025gt6.clients.em.health.ge.com/csp-tools.git
 
 ___________________________________________
-how to get updates (avoid "git pull"):
---for example local branch has name "task_screen_setup_17Feb2014_squashed"
-1. get changes:
+Add changes step by step 
+
+--for example local branch has name "task_screen_setup", and Rally number: "DE999"
+
+1. add files:
+> git add .
+
+2. commit chnges:
+> git commit - "add your comment here"
+
+3. merge commits to one (if any):
+> git rebase -i origin/master
+
+4. get changes from repository:
 > git fetch
 
-2. if any files was locally changed:
-> git rebase origin/task_screen_setup_17Feb2014_squashed
+5. rebase your changes to top of the repository:
+> git rebase origin/master
 
-3. if no files locally changed:
-> git reset --hard origin/task_screen_setup_17Feb2014_squashed
+6. push changes to gerrit:
+> git push gerrit task_screen_setup:refs/publish/master/DE999
+
+7. wait for review/comments.
+
+8. After all review was OK, push to master for "gerrit" AND "gitolite":
+> git push gerrit task_screen_setup:master
+> git push origin task_screen_setup:master
 
 ___________________________________________
 Rebase:
@@ -32,7 +49,7 @@ Gerrit and Continuous Integration.
 info in wiki:
 "http://czc3025gt7.clients.em.health.ge.com:8080/wiki/index.php/Integrating_changes"
 
-How to push to gerrit.
+How to publish to gerrit for review(!):
 ! REM: 
     - before ":refs" there is hash or branch_name of the commit
     - after "master" there is topic, some number from Rally system: "DE167"
@@ -44,7 +61,7 @@ How to push to gerrit.
 > git push gerrit task_crash_open_SpO2_alarms_menu_aug_2014:refs/publish/master/DE167
 
 ___________________________________________
-Integration, step by step:
+Integration, shortly:
 
 > git add .
 > git commit -m "comment"
@@ -62,6 +79,19 @@ After all review was OK, push to master for "gerrit" AND "gitolite":
 > git push origin task_crash_open_SpO2_alarms_menu_aug_2014:master
 
 ___________________________________________
+how to get updates (avoid "git pull"):
+--for example local branch has name "task_screen_setup_17Feb2014_squashed"
+
+1. get changes:
+> git fetch
+
+2. if any files was locally changed:
+> git rebase origin/task_screen_setup_17Feb2014_squashed
+
+3. if no files locally changed:
+> git reset --hard origin/task_screen_setup_17Feb2014_squashed
+
+__________________________________________
 To create new working branch "task_new_branch_name":
 
 > git branch task_new_branch_name

@@ -9,3 +9,5 @@ REM: it will enable itself again and again, so keep eye on it.
 2. 
 
 3. 
+
+https://mycitrix.health.ge.com/Citrix/XenApp/auth/login.aspx

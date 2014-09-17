@@ -4,13 +4,16 @@ CMAKE:
 1. With PERL script.
 - use PERL script "esp_builder.pl" from git repo named "csp-tools";
 - add path to script "esp_builder.pl" to a file "build.bat";
-- palce file "build.bat" to folder "C:\bin", where all binary are;
+- put file "build.bat" to folder "C:\bin", where all binary are;
 - in ESP root directory run:
     > build -c 
-# it will create     
+# it will create all service files for compilation.
+-     
 
 
 2. Simple 'bat' files.
+- Generate CMake files, running:
+    > gencmake
 - create folder "build" in ESP root directory;
 - goto "build" and create folder "WindowsDebug";
 - goto "WindowsDebug" and run:
