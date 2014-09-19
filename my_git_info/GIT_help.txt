@@ -144,7 +144,7 @@ To shows you all branches in the remote:
 If you just want to take a quick peek at an upstream branch, you can check it out directly:
 >git checkout origin/experimental
 
-But if you want to work on that branch, you''ll need to create a local tracking branch:
+But if you want to work on that branch, you will need to create a local tracking branch:
 >git checkout -b experimental origin/experimental
  
 ___________________________________________

@@ -5,13 +5,22 @@ CMAKE:
 - use PERL script "esp_builder.pl" from git repo named "csp-tools";
 - add path to script "esp_builder.pl" to a file "build.bat";
 - put file "build.bat" to folder "C:\bin", where all binary are;
-- in ESP root directory run:
-    > build -c 
-# it will create all service files for compilation.
--     
+- download sources from GIT repo.
+- goto ESP root directory (where folders "MSF" and "MDN" are)
+- to create file "CMakeList.txt" run:
+    > gencmake
+- to create all service files/folders for compilation run:
+    > build -setup
+
+- goto directory "build" if going to use CMake compilation
+- from "build" goto to one of few directory, for example "local-debug"
+- to prepare environments for compilation run:
+    > build -c
+- to compile all and produce S5Mon.exe file run:
+    > build
 
 
-2. Simple 'bat' files.
+2. With simple 'bat' files.
 - Generate CMake files, running:
     > gencmake
 - create folder "build" in ESP root directory;
@@ -25,8 +34,18 @@ CMAKE:
     > ninja -j 8 # for set number of cores used for building.
 # this will start actual building and create executable files S5Mon.exe for MAX, etc.
 
-Problems:
- - no VisualStudio solution creating by cmake.
+3. To create VisualStudio solution.
+- goto "build" folder
+- create there folder named "VisualStudio"
+- goto "VisualStudio" folder
+- to create solution run:
+    > cmake -G "Visual Studio 10 2010" ..\..\
+- open newly created solution "S5Mon.sln"
+- change startup project from "ALL_BUILD" to "S5Mon"
+- change General->Output directory to smth like :
+    "D:/dev/esp_main_trank/build/local-debug/_temp"
+  where "local-debug" is mostly builded project.
+  
 ___________________________________________
 OMAKE (obsolete from SEP-2014):
 

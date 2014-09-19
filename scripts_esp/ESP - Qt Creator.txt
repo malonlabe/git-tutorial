@@ -1,0 +1,29 @@
+HowTo: Qt Creator usage.
+
+
+-- Startup with the project
+
+1. Open "File"->"open File or project"
+2. Select file "CMakeList.txt"
+3. Select Ninja as compiler
+4. 
+
+
+When open file "CMakeList.txt", use follow keys:
+
+-DORPHAN_HEADERS=ON 
+
+-DCMAKE_BUILD_TYPE=Debug
+
+-DDBG_FLAG=ON 
+
+-- Compile the project
+    1. Errors: click and go
+    2. 
+-- Run and debug
+    1. Breakpoints
+    2. Exe-file path
+    3. All libraryes
+
+-- Unittest with Qt Creator
+-- Tips and tricks

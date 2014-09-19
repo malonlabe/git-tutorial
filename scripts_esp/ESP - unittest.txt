@@ -1,13 +1,31 @@
+Unittest notes.
 
-unit test using CMAKE
+unittest using CMAKE:
+
+1.with ninja:
 
 - run follow:
-> ninja unittest
+    > ninja unittest
 
-___________________________________________
-unit test using OMAKE
+2. with script build:
+
+- To create unittests for unit i.e. "DAlarm":
+- run follow:
+    > build DAlarm.unittest
+- to run unittest:
+    >
+
+
+________________________________________
+Unittest implementation notes:
+
+- create "Test_NAME" header and sourse files: hpp and cpp.
+- add "Test_NAME.hpp" to makefile
+- 
+
+________________________________________
+unittest using OMAKE:
 # obsolete SEP-2014.
-
 
 1. hardcore way:
 > omake monitor=winppd -f ..\..\..\..\..\..\..\Msf\Code\Msf\Default\DScreen\makefile.mak unittest 
