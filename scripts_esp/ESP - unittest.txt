@@ -4,22 +4,31 @@ unittest using CMAKE:
 
 1.with ninja:
 
-- run follow:
-    > ninja unittest
-
+- To create unittests for unit i.e. "DAlarm":
+- goto folder where all builds are, i.e. "local-debug"
+- ion this folder run follow:
+    > ninja unittest subsystem.unittest
+    
+where "subsystem" is the name of the subsystem, for example, "DCo.unittest"
+- to run unittest:
+    > 
+________________________________________
 2. with script build:
 
 - To create unittests for unit i.e. "DAlarm":
-- run follow:
+- goto folder where all builds are, i.e. "local-debug"
+- ion this folder run follow:
     > build DAlarm.unittest
 - to run unittest:
-    >
+    > ctest -R DAlarm
+- to run unittest with error output:
+    > ctest -j 4 --output-on-failure
 
 
 ________________________________________
 Unittest implementation notes:
 
-- create "Test_NAME" header and sourse files: hpp and cpp.
+- create "Test_NAME" header and sourse files: hpp and cpp. Where "NAME" is target file for unittest.
 - add "Test_NAME.hpp" to makefile
 - 
 
