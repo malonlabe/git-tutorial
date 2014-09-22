@@ -17,6 +17,7 @@ When open file "CMakeList.txt", use follow keys:
 
 -DDBG_FLAG=ON 
 
+___________________________________________
 -- Compile the project
     1. Errors: click and go
     2. 

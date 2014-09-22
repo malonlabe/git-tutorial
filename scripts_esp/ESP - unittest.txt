@@ -6,14 +6,17 @@ unittest using CMAKE:
 
 - To create unittests for unit i.e. "DAlarm":
 - goto folder where all builds are, i.e. "local-debug"
-- ion this folder run follow:
+- in this folder run follow:
     > ninja unittest subsystem.unittest
-    
-where "subsystem" is the name of the subsystem, for example, "DCo.unittest"
+where "subsystem" is the name of the subsystem, for example, "DAlarm.unittest":
+    > ninja unittest DAlarm.unittest
+
 - to run unittest:
-    > 
+    > ninja unittest subsystem.unittest.run
+    > ninja unittest DAlarm.unittest.run
+
 ________________________________________
-2. with script build:
+2. with Perl script build:
 
 - To create unittests for unit i.e. "DAlarm":
 - goto folder where all builds are, i.e. "local-debug"
@@ -32,9 +35,20 @@ Unittest implementation notes:
 - add "Test_NAME.hpp" to makefile
 - 
 
+
 ________________________________________
+Unittest - bullseye coverage:
+
+1. run "cov01 --on" to turn it on;
+2. run "cov01 --off" to turn it off;
+3. run "cov01 --statusf" to see status;
+4. start CoverageBrowser.exe (alias to "BullseyeCoverage")
+
+
+________________________________________
+REM: This is obsolete start from SEP-2014.
+
 unittest using OMAKE:
-# obsolete SEP-2014.
 
 1. hardcore way:
 > omake monitor=winppd -f ..\..\..\..\..\..\..\Msf\Code\Msf\Default\DScreen\makefile.mak unittest 

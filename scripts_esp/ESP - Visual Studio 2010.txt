@@ -1,0 +1,31 @@
+HowTo: Visual Studio build and compile.
+
+
+-- Startup with the project
+
+1. 
+2. 
+3. 
+4. 
+
+
+-- Compile the project
+1. 
+2. 
+3. 
+4. 
+
+
+
+___________________________________________
+TODO:
+-- Compile the project
+    1. 
+    2. 
+-- Run and debug
+    1. 
+    2. 
+    3. 
+
+-- Unittest not supported
+-- Tips and tricks

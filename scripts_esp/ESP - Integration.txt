@@ -1,20 +1,18 @@
 ___________________________________________
 Integration, step by step:
 
-Add changes step by step 
+--assume that for example local branch where you working has name "task_screen_setup", and Rally number: "DE999"
 
---for example local branch has name "task_screen_setup", and Rally number: "DE999"
-
-1. add files:
+1. add new/changed files to local repository:
 > git add .
 
-2. commit chnges:
-> git commit - "add your comment here"
+2. commit changes to local repository:
+> git commit -m "add your comment here"
 
-3. merge commits to one (if any):
+3. merge set of commits to one (if any):
 > git rebase -i origin/master
 
-4. get changes from repository:
+4. get latest changes from repository:
 > git fetch
 
 5. rebase your changes to top of the repository:
@@ -23,8 +21,10 @@ Add changes step by step
 6. push changes to gerrit:
 > git push gerrit task_screen_setup:refs/publish/master/DE999
 
-7. wait for review/comments.
+7. wait for succesful build and positive review/comments.
 
 8. After all review was OK, push to master for "gerrit" AND "gitolite":
+> git fetch
+> git rebase origin/master
 > git push gerrit task_screen_setup:master
 > git push origin task_screen_setup:master
