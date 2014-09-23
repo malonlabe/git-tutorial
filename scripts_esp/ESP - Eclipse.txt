@@ -1,28 +1,52 @@
-MAr-2014
+Mar-2014
 
 Eclipse - Kepler.
 
 How to import existing GIT project, for example D:\dev\esp2 :
 
-0. Set default location as D:\dev
-1. Select File->New->Project
-2. Select General->Project, press Next
-3. Project name : esp2
-4. Press Finish
-5. In Project Explorer select in esp2: 'Convert to a C/C++ Project'
-6. In 'Project options' select 'Project type' as 'Makefile project' 
-7. In 'Toolchains:' select 'Microsoft Visual C++'
-8. Press Finish.
-9. Select 'property' for esp2. 
-10. Go to 'Resource->Resource Filters'. 
-11. Press 'Add'
-12. Select 'Include only'
-13. Select 'Applies to ... Folders'
-14. Add 'Msf' and 'Mdn' to 'Files and Foldes Attributes'
-15. Check 'Case sensitive'
-16. Press 'OK'.
-17. Note that 'Targets' folder disappeared from Project Explorer.
+1. Set default location as D:\dev
+2. Select "File->New->Project"
+3. Select "General->Project", press "Next"
+4. Project name : esp2
+5. Press "Finish"
+6. In Project Explorer select in esp2: 'New'
+7. Select 'Convert to a C/C++ Project (Adds C/C++ Nature)'
+8. Popup 'Convert to a C/C++ Project' will appear.
+9. Select "esp2" in "Candidates for conversion"
+10. Select "C++" in "Convert to C or C++"
+11. Select "Specify project type" in "Project options"
+12. In 'Project options' select 'Project type' as 'Makefile project' 
+13. In 'Toolchains:' select 'Microsoft Visual C++'
+14. Press 'Finish'
+15. Select 'property' for esp2
+16. Go to 'Resource->Resource Filters'
+17. Press 'Add'
+18. Select 'Include only'
+19. Select 'Applies to ... Folders'
+20. Add 'Msf' to 'Files and Foldes Attributes'
+21. Check 'Case sensitive'
+22. Press 'OK'
+23. Add 'Mdn' in same matter (points 11-16)
+24. Note that 'Targets' and 'build' folder disappeared from Project Explorer
 
+______________________
+Indexer:
+
+1. open "Windows->Preferences"
+2. Under "C/C++" select "Indexer"
+3. Disable indexer, apply 
+4. Enable Indexer back, apply.
+REM: C/C++ indexer has to show progress in bottom-right corner, about 5-10 minutes.
+
+______________________
+The vim settings todo on startup:
+
+set incsearch
+set hlsearch
+set ignorecase
+nnoremap a i
+inoremap jj <Esc>
+set cul 
 ______________________
 Note:
 - bookmarks are crap.
@@ -30,9 +54,12 @@ Note:
 
 ______________________
 HOTO:
-- display a list of all the hotkeys in Eclipse:  Ctrl+Shift+L
-- goto last edit location: Ctrl+Q
-- show list of open Editors. Use arrow keys and enter to switch Ctrl+E
+- display a list of all the hotkeys in Eclipse:  
+    Ctrl+Shift+L
+- goto last edit location: 
+    Ctrl+Q
+- show list of open Editors. 
+    Ctrl+E, use arrow keys and enter to switch. 
 ______________________
 About Autocomplete:
 by default it is crap. Ctrl+space is most common use.

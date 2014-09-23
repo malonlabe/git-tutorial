@@ -14,7 +14,19 @@ HowTo: Visual Studio build and compile.
 2. 
 3. 
 4. 
-
+___________________________________________
+To create VisualStudio solution.
+- create "build" folder in ESP root folder;
+- goto "build" folder
+- create there folder named "VisualStudio"
+- goto "VisualStudio" folder
+- to create solution run:
+    > cmake -G "Visual Studio 10 2010" ..\..\
+- open newly created solution "S5Mon.sln"
+- build "ALL_BUILD" project
+- build "" project (for DLLs creation)
+- change startup project from "ALL_BUILD" to "S5Mon"
+- build/run "S5Mon" project.
 
 
 ___________________________________________
@@ -29,3 +41,15 @@ TODO:
 
 -- Unittest not supported
 -- Tips and tricks
+
+
+___________________________________________
+The vim settings todo on startup:
+
+set incsearch
+set hlsearch
+set ignorecase
+nnoremap a i
+inoremap jj <Esc>
+set cul 
+___________________________________________
