@@ -7,13 +7,13 @@ unittest using CMAKE:
 - To create unittests for unit i.e. "DAlarm":
 - goto folder where all builds are, i.e. "local-debug"
 - in this folder run follow:
-    > ninja unittest subsystem.unittest
+    > ninja subsystem.unittest
 where "subsystem" is the name of the subsystem, for example, "DAlarm.unittest":
-    > ninja unittest DAlarm.unittest
+    > ninja DAlarm.unittest
 
 - to run unittest:
-    > ninja unittest subsystem.unittest.run
-    > ninja unittest DAlarm.unittest.run
+    > ninja subsystem.unittest.run
+    > ninja DAlarm.unittest.run
 
 ________________________________________
 2. with Perl script build:
