@@ -1,19 +1,19 @@
 @ECHO OFF
 REM
-REM Script compiles unittest for ESP project from command line
-REM using CMake and ninja.
+REM Script compiles unittest for ESP project from 
+REM command line, using ninja.
+REM 
+REM Do not forget that cov01 shall be set to ON!
 REM
 REM Yuriy Senishch. SEP-2014
 REM
 @echo off
 
-REM set number of CPU for parallel compilation:
-REM set jobs=4
-set CPU_TO_USE=8
 set ACTION_TO_DO=unittest
 set COMPONENT=DAlarm
 set COMPILER=ninja
-set CMAKE_COMPILER=Ninja
+set MAIN_ACTION=%COMPILER% %COMPONENT%.%ACTION_TO_DO%
+set MAIN_OBJ=unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 
 if -%1==- goto NoParam
 goto START 
@@ -21,19 +21,18 @@ goto START
 :NoParam
 
 :START
-:: echo %COMPILER% %ACTION_TO_DO% %COMPONENT%.%ACTION_TO_DO%
-echo %COMPILER% %COMPONENT%.%ACTION_TO_DO%
-echo --------------------------------------------------------
 call TDiff.exe
-::call cmake -G %CMAKE_COMPILER% ../..  
-::call %COMPILER% -j %CPU_TO_USE%
 
-:: call %COMPILER% %ACTION_TO_DO% %COMPONENT%.%ACTION_TO_DO%
-call %COMPILER% %COMPONENT%.%ACTION_TO_DO%
+:ERASE_PREV_FILE
+if exist %MAIN_OBJ% del %MAIN_OBJ%
 
+echo calling %MAIN_ACTION% ....
 echo --------------------------------------------------------
-call TDiff.exe
+
+call %MAIN_ACTION%
+echo --------------------------------------------------------
 goto END
 
 :END
+call TDiff.exe
 

@@ -1,18 +1,21 @@
 @ECHO OFF
 REM
-REM Script run unittest EXE file for ESP component 
-REM from command line.
+REM Script "Build and Run EXE file" in unittest for ESP
+REM component from command line using "build" Perl script.
+REM 
+REM First : previous result exe-file is deleted.
+REM Second: build script called
+REM Third: if build was OK, result EXE file is calling.
+REM
+REM For change unittest target, change COMPONENT!
 REM
 REM Yuriy Senishch. SEP-2014
 REM
 @echo off
 
-REM set number of CPU for parallel compilation:
-REM set jobs=4
-set CPU_TO_USE=8
 set ACTION_TO_DO=unittest
-set OUTPUT_FAIL=--output-on-failure
 set COMPONENT=DAlarm
+set COMPILER=build
 set MAIN_OBJ=unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 
 if -%1==- goto NoParam
@@ -22,6 +25,15 @@ goto START
 
 :START
 call TDiff.exe
+
+:ERASE_PREV_FILE
+if exist %MAIN_OBJ% del %MAIN_OBJ%
+
+:BUILD_START
+echo --------------------------------------------------------
+echo calling %COMPILER% %COMPONENT%.%ACTION_TO_DO% ....
+echo --------------------------------------------------------
+call %COMPILER% %COMPONENT%.%ACTION_TO_DO%
 
 :CHECK_RESULT_FILE
 if exist %MAIN_OBJ% goto TARGET_EXIST
@@ -36,10 +48,9 @@ goto END
 
 :ERROR_NO_EXE_FILE
 echo --------------------------------------------------------
-echo ERROR: file '%MAIN_OBJ%' not exist!
+echo BUILD ERROR: file '%MAIN_OBJ%' not exist!
 echo --------------------------------------------------------
 goto END
 
 :END
 call TDiff.exe
-

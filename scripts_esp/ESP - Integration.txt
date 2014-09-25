@@ -28,3 +28,7 @@ Integration, step by step:
 > git rebase origin/master
 > git push gerrit task_screen_setup:master
 > git push origin task_screen_setup:master
+
+
+NOtes:
+Read doc "Rally Observation Guide.doc" for defect handeling.
