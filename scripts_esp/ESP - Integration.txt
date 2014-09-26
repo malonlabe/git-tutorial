@@ -21,6 +21,10 @@ Integration, step by step:
 6. push changes to gerrit:
 > git push gerrit task_screen_setup:refs/publish/master/DE999
 
+--- if there is no Rally number (i. e. for unittest):
+
+> git push gerrit task_unittest_one:refs/publish/master/unittest_one
+
 7. wait for succesful build and positive review/comments.
 
 8. After all review was OK, push to master for "gerrit" AND "gitolite":
@@ -30,5 +34,5 @@ Integration, step by step:
 > git push origin task_screen_setup:master
 
 
-NOtes:
+Notes:
 Read doc "Rally Observation Guide.doc" for defect handeling.

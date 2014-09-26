@@ -79,6 +79,20 @@ After all review was OK, push to master for "gerrit" AND "gitolite":
 > git push origin task_crash_open_SpO2_alarms_menu_aug_2014:master
 
 ___________________________________________
+If new git clone was download, Gerrit will not work. 
+To fix it:
+
+1. check if gerrit has been added for this clone:
+> git remote -v 
+--- output should be like "gerrit:esp (fetch)". if not:
+
+2. add gerrit by running:
+> git remote add gerrit gerrit:esp
+
+3. Add Change-Id. In "Git Bash" (win32 cmd will not work!) run follow:
+> GIT_EDITOR=true git rebase --force-rebase --preserve-merges -i -x 'git commit --amend --no-edit' origin/master
+
+___________________________________________
 how to get updates (avoid "git pull"):
 --for example local branch has name "task_screen_setup_17Feb2014_squashed"
 
