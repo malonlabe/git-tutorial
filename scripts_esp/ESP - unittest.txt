@@ -1,10 +1,10 @@
 Unittest notes.
 
 
-REM: it is better to use folder with "coverage" in its name.
-REM: Pertl script "build" will turn coverage "cov01 --on" automatically
+--- For unittests preferrably use a folder with "coverage" in its name.
+--- Pertl script "build" will turn coverage "cov01 --on" automatically
 
-unittest using CMAKE:
+Unittest using CMAKE:
 
 1. To create unittests using ninja for unit i.e. "DAlarm":
 - make sure that coverage is on:

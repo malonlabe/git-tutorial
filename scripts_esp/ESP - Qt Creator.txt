@@ -1,6 +1,5 @@
 HowTo: Qt Creator usage.
-
-
+___________________________________________
 -- Startup with the project
 
 1. Open "File"->"open File or project"
@@ -8,7 +7,7 @@ HowTo: Qt Creator usage.
 3. Select Ninja as compiler
 4. 
 
-
+___________________________________________
 When open file "CMakeList.txt", use follow keys:
 
 -DORPHAN_HEADERS=ON 
@@ -18,13 +17,21 @@ When open file "CMakeList.txt", use follow keys:
 -DDBG_FLAG=ON 
 
 ___________________________________________
+TODO:
+
+___________________________________________
 -- Compile the project
     1. Errors: click and go
     2. 
+
 -- Run and debug
     1. Breakpoints
     2. Exe-file path
     3. All libraryes
 
 -- Unittest with Qt Creator
+    1. Errors: click and go
+    2. 
+
 -- Tips and tricks
+

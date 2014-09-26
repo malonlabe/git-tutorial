@@ -29,7 +29,7 @@ CMAKE:
     > cmake -G Ninja ../..
 # it will create all service files for compilation.
 - in "WindowsDebug" folder run:
-    > ninja
+    > Ninja
     or
     > ninja -j 8 # for set number of cores used for building.
 # this will start actual building and create executable files S5Mon.exe for MAX, etc.
@@ -47,6 +47,22 @@ CMAKE:
   where "local-debug" is mostly builded project.
   
 ___________________________________________
+VisualStudio in use:
+
+1. VisualStudio run S5mon in simulation mode:
+- go to project propery Debugging->Command arguments
+- add "-simulate"
+
+2.  in S5Mon main project propery Debugging->Command arguments are:
+-pod -unid -screens 1
+
+3. run VisualStudio as debugger only:
+
+> devenv.exe /debugexe ./S5Mon <S5mon args...>
+> devenv.exe /debugexe ./S5Mon.exe -pod -unid -screens 1
+
+
+-------------------------------------------------------------
 OMAKE (obsolete from SEP-2014):
 
 Executable file "S5Mon.exe" and all run-time files used to be in Image_Windows subdirectory. 
@@ -125,14 +141,6 @@ if running app couse follow error:
     > build -m max S5MonWindowsRunTime
 
 6. Now you can run app, press F5 on VisualStudio;
-
-___________________________________________
-
-VisualStudio simulation: add to project propery Debugging->Command arguments
--simulate
-
-in S5Mon main project propery Debugging->Command arguments are:
--pod -unid -screens 1
 
 ___________________________________________
 obsolete:

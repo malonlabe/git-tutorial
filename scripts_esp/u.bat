@@ -9,9 +9,14 @@ REM Yuriy Senishch. SEP-2014
 REM
 @echo off
 
+set COV=cov01
+set COV_STATUS=--status
 set ACTION_TO_DO=unittest
 set COMPONENT=DAlarm
 set COMPILER=ninja
+
+:: combine action strings.
+set CHECK_COVERAGE=%COV% %COV_STATUS%
 set MAIN_ACTION=%COMPILER% %COMPONENT%.%ACTION_TO_DO%
 set MAIN_OBJ=unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 
@@ -31,6 +36,11 @@ echo --------------------------------------------------------
 
 call %MAIN_ACTION%
 echo --------------------------------------------------------
+
+echo check BullsEye availability ....
+echo %CHECK_COVERAGE%
+call %CHECK_COVERAGE%
+
 goto END
 
 :END

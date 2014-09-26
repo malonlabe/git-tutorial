@@ -84,13 +84,19 @@ To fix it:
 
 1. check if gerrit has been added for this clone:
 > git remote -v 
---- output should be like "gerrit:esp (fetch)". if not:
+--- output should be like "gerrit:esp (fetch)". If not:
 
-2. add gerrit by running:
+2. copy file "commit-msg" from any previous GIT clone or 
+   from  "http://czc3025gt7.clients.em.health.ge.com/debrepo/hooks/commit-msg" 
+   and copy it to the ".git/hooks" directory of your esp clone.
+
+3. add gerrit as remote by running:
 > git remote add gerrit gerrit:esp
 
-3. Add Change-Id. In "Git Bash" (win32 cmd will not work!) run follow:
+4. Add Change-Id. In "Git Bash" (win32 cmd will not work!) run follow:
 > GIT_EDITOR=true git rebase --force-rebase --preserve-merges -i -x 'git commit --amend --no-edit' origin/master
+
+
 
 ___________________________________________
 how to get updates (avoid "git pull"):
