@@ -1,0 +1,26 @@
+03-OCT-2014
+Robot Framework
+Best Practices
+__________________________________
+Day 2 training.
+
+1. test templates
+2. variable scopes/override
+3. embedded arguments.
+
+Anssi Syrjaslo
+anssi.syrjasalo-at-eficode.com
+
+http://robotframework.org/#test-libraryes
+http://tinyurl.com/ge-robot-training
+
+10:00-11:30
+
+- download file: "bp.zip" and unzip it
+
+- run "server.py"  from "bp/demo" folder. Keep it running
+- open mozilla, localhost:7272
+
+login: demo 
+pass: mode 
+__________________________________
