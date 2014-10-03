@@ -1,0 +1,130 @@
+==========================================================
+Robot Framework hands-on installation instructions
+==========================================================
+
+You need to have the following installed:
+  - Python 2.7.x
+  - pip (preferred over easy_install)
+    - Robot Framework
+    - Robot Framework Selenium2Library
+  - Mozilla Firefox
+  
+Detailed instructions below.
+
+
+-----------------------------------------------------------
+Open cmd.exe, allow access to the Internet in GE Network
+-----------------------------------------------------------
+
+set HTTP_PROXY=http://3.187.157.236:9400
+set HTTPS_PROXY=https://3.187.157.236:9400
+
+NOTE! Keep this cmd.exe open for the further steps.
+NOTE! You need to run these every time you open a new cmd.exe.
+
+
+-----------------------------------------------------------
+Python 2.7
+-----------------------------------------------------------
+ 
+In cmd.exe, run:
+
+  python --version
+
+If "python 2.7.x" is output, you can skip the rest of this section.
+
+
+Otherwise, run python-2.7.8.msi.
+  
+  Select 'Install for all users'.
+  The default installation path is fine (C:\Python27\).
+  After the installation, set the Path environment variable:
+  
+    OPTION #1:
+    
+      In cmd.exe, run:
+      
+      set PATH=%PATH%;C:\Python27\;C:\Python27\Scripts
+      setx PATH "%PATH%;C:\Python27\;C:\Python27\Scripts" /M
+  
+    
+    OPTION #2 - Only if #1 fails:
+  
+      Navigate in Windows:
+        Control Panel ->
+        System ->
+        Advanced System Settings ->
+        Environment Variables ->
+        section "System Variables"
+        
+      Scroll to the variable named "Path".
+      Click "Edit".
+      
+      Variable Value: Add this to the end:
+        ;C:\Python27\;C:\Python27\Scripts
+        
+      Click OK.
+      Log off and login again to make Paths effective.
+  
+  
+-----------------------------------------------------------
+PIP (The de-facto package manager for Python)
+-----------------------------------------------------------
+
+In cmd.exe, run:
+
+  pip list
+  
+
+If this outputs an error:
+
+  'pip' is not recognized as an internal or external command,
+  operable program or batch file.
+
+  Then install pip:
+    
+    python get-pip.py
+    
+  And try again:
+   
+    pip list
+    
+    
+'pip list' outputs a list of installed Python packages.
+WE WILL USE THIS INFO IN THE NEXT TWO STEPS.
+  
+  
+-----------------------------------------------------------
+Robot Framework
+-----------------------------------------------------------
+
+If 'pip list' did output 'robotframework', skip this.
+
+Otherwise:
+
+  pip install robotframework
+
+  
+-----------------------------------------------------------
+Selenium2Library
+-----------------------------------------------------------
+
+If 'pip list' did output 'robotframework-selenium2library', skip this.
+
+Otherwise:
+
+  pip install robotframework-selenium2library
+
+  
+-----------------------------------------------------------
+Install Mozilla Firefox
+-----------------------------------------------------------
+
+If you already have it installed, skip this.
+
+Otherwise, run Firefox Setup 32.0.2.exe.
+
+      
+-----------------------------------------------------------
+THAT'S IT!
+-----------------------------------------------------------

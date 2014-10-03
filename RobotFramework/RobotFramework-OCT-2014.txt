@@ -1,0 +1,116 @@
+02-OCT-2014
+Robot Framework
+
+Anssi Syrjaslo
+http://robotframework.org/#test-libraryes
+http://tinyurl.com/ge-robot-training
+
+10:00-11:45
+
+- download file: "handson.zip" and unzip it
+
+- set proxy:
+set HTTP_PROXY=http://3.187.157.236:9400
+set HTTPS_PROXY=https://3.187.157.236:9400
+
+-check python 2.7 installed:
+> python --version
+- add "C:\Python27\Scripts" to %PATH%
+- install pip
+    > python get-pip.py
+- install Robot Framework
+  > pip install robotframework
+- install Selenium2Library
+  > pip install robotframework-selenium2library
+__________________________________
+- run "server.py"  from demo folder. Keep it running
+- open mozilla, localhost:7272
+
+login: demo 
+pass: mode 
+__________________________________
+1. Task:
+- How to test login successsfully for this web page:
+
+Goto login page.
+set focus to "User Name" field
+type "demo" 
+set focus to "Password" field
+type "mode"
+press button "Login"
+verify that new page with "Welcomw Page"
+verify that text "login succeeded. Now you can logout" appears
+
+Remarks:
+- open a webbrowser
+- local host address needed
+__________________________________
+
+*** Test cases ***
+Successful login with valid username and valid Password
+
+    Open Browser                url=localhost:7272
+    Write To Username Field     demo
+    Write To Password Field     mode
+    #Close Browser
+    
+    press button "Login"
+    verify that new page with "Welcome Page"
+    verify that text "login succeeded. Now you can logout" appears
+    [Teardown]    Close Browser
+__________________________________
+
+From html: find a object ID, like:
+login_button
+
+
+- Execution ios stop in first error;
+- To avoid it use Teardown keyword;
+- Teardown ignore all previous errors;
+
+Task:
+- implement "Write to Password Field"
+- implement "Press Button Login"
+- implement "verify that new page Welcome Page appears"
+__________________________________
+
+To avoid doublicates:
+inin beginning of a file use:
+"Test Setup     Goto Login Page"
+"Test Teardown  Cleanup Browser"
+
+
+TYhe "BuiltIn" library 
+- consists most used keywords;
+- is always included;
+
+- use:
+Sleep <time in seconds>
+
+- use "${EMPTY}"
+to put EMPTY string to a input field. 
+
+- use command line argument for run only one test from the file "*.robot":
+> pybot --test SuccessfulLogi*
+REM: use asterix as a wild card;
+
+- use "suite" Setup for change scope of a testcase.
+
+__________________________________
+Variables iinn robotframework:
+- use CAPITAL letters.
+- doesnt matter is it undescore or whitespaces;
+
+*** Variables ***
+${VAR_NAME}
+${LOGIN_URL}=       localhost:7272
+
+__________________________________
+To run all *.robot files call:
+    > pybot .
+
+__________________________________
+resource files:
+- same as "*.robot" file, but no "Test cases" field exists there.
+- under "Settings":
+    Resource <resource_file_name>
