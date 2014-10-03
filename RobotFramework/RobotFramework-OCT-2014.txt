@@ -38,7 +38,7 @@ type "demo"
 set focus to "Password" field
 type "mode"
 press button "Login"
-verify that new page with "Welcomw Page"
+verify that new page with "Welcome Page"
 verify that text "login succeeded. Now you can logout" appears
 
 Remarks:
@@ -80,7 +80,7 @@ inin beginning of a file use:
 "Test Teardown  Cleanup Browser"
 
 
-TYhe "BuiltIn" library 
+The "BuiltIn" library 
 - consists most used keywords;
 - is always included;
 
@@ -114,3 +114,5 @@ resource files:
 - same as "*.robot" file, but no "Test cases" field exists there.
 - under "Settings":
     Resource <resource_file_name>
+
+----END Day ONE -------

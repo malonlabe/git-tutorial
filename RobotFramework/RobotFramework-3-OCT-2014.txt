@@ -13,6 +13,8 @@ anssi.syrjasalo-at-eficode.com
 
 http://robotframework.org/#test-libraryes
 http://tinyurl.com/ge-robot-training
+http://tinyurl.com/robot-best-practices
+
 
 10:00-11:30
 
@@ -24,3 +26,33 @@ http://tinyurl.com/ge-robot-training
 login: demo 
 pass: mode 
 __________________________________
+
+Problems:
+- more human readable 
+- use Teardown
+- 
+__________________________________
+
+- use __init__ for directory init;
+
+- Page_Should_Contain_Link    logout_link     #
+REM: "Page_Should_Contain_Link" is a function that check presence of a link, given as parameter;
+from: Selenium2Library
+
+- Click_Link                  logout_link
+REM: "Click_Link" is a function which press on a link, given as parameter;
+from: 
+
+- ${location}=                Get Location
+REM: "Get Location" is a function which take an address from a browser addressbar;
+from:
+
+- Should Be Equal             ${location}    http://${LOGIN_URL}/
+REM: "Shou Be Equal" is a function compare 2 strings?
+from:
+__________________________________
+Test template
+- usage: "Suite Template    <template_name>"
+- use as a function;
+- all test cases will be this function calls, so mind arguments;
+- if need to use other test case, use [Template] after test case name
