@@ -1,0 +1,41 @@
+Files I changed:
+
+OCT-2014
+___________________________________________
+Task: 
+    DE335 "An error is logged when ECG Setup menu is opened". 
+Files:
+    --
+
+
+SEP-2014
+___________________________________________
+Task: 
+    DE167 Fix Zero division in VerticalLimit class. 
+Files:
+    DAlarm/VerticalLimitView.cpp
+___________________________________________
+Task: 
+    DE85 Fix crash after focus changed. 
+Files:
+    Ui/UiToolkit/ScreenController.cpp
+    Ui/UiToolkit/ScreenController.hpp
+___________________________________________
+Task: 
+    Unittest: Add a Unittest for VerticalLimitView. 
+Files:    
+    DAlarm/VerticalLimitView.hpp
+    DAlarm/UnitTests/Test_VerticalLimitView.hpp
+    DAlarm/UnitTests/Test_VerticalLimitView.cpp
+
+
+___________________________________________
+Template:
+___________________________________________
+Task: 
+    DEXXX  
+Files:
+    *.cpp
+
+___________________________________________
+Remarks:
