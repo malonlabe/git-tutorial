@@ -5,6 +5,10 @@
 *.obj
 *.exe
 
+# Result files:
+*.html
+*.xml
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
