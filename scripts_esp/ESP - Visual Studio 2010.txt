@@ -30,6 +30,20 @@ To create VisualStudio solution.
 
 
 ___________________________________________
+VisualStudio in use:
+
+1. VisualStudio run S5mon in simulation mode:
+- go to project propery Debugging->Command arguments
+- add "-simulate"
+
+2.  in S5Mon main project propery Debugging->Command arguments are:
+-pod -unid -screens 1
+
+3. run VisualStudio as debugger only:
+
+> devenv.exe /debugexe ./S5Mon <S5mon args...>
+> devenv.exe /debugexe ./S5Mon.exe -pod -unid -screens 1
+___________________________________________
 TODO:
 -- Compile the project
     1. 

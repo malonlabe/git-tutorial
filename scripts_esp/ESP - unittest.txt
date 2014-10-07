@@ -2,7 +2,7 @@ Unittest notes.
 
 
 --- For unittests preferrably use a folder with "coverage" in its name.
---- Pertl script "build" will turn coverage "cov01 --on" automatically
+--- Perl script "build" will turn coverage "cov01 --on" automatically
 
 Unittest using CMAKE:
 
