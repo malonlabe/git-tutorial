@@ -9,6 +9,8 @@ To clone the repo:
 > git clone git@czc3025gt6.clients.em.health.ge.com:esp <new_dir_name>
 > git clone ssh://git@czc3025gt6.clients.em.health.ge.com/csp-tools.git
 
+REM: Name of repository is "esp"
+
 ___________________________________________
 Add changes step by step 
 
@@ -96,8 +98,6 @@ To fix it:
 4. Add Change-Id. In "Git Bash" (win32 cmd will not work!) run follow:
 > GIT_EDITOR=true git rebase --force-rebase --preserve-merges -i -x 'git commit --amend --no-edit' origin/master
 
-
-
 ___________________________________________
 how to get updates (avoid "git pull"):
 --for example local branch has name "task_screen_setup_17Feb2014_squashed"
@@ -126,6 +126,18 @@ proxy settings:
 1. git config --global http.proxy 3.187.157.236:9400
 2. git config http.proxy 3.187.157.236:9400
 
+___________________________________________
+- check all GIT settings :
+config --list
+
+- check if 'autocrlf' set to true in GIT:
+git config --system --get-regexp autocrlf
+
+- set it to true:
+git config --system core.autocrlf true
+
+- and refresh git repo local:
+git reset --hard
 
 ___________________________________________
 grep ERROR example.txt | wc -l
