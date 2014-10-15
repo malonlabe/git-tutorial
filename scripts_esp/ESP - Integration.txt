@@ -33,6 +33,6 @@ Integration, step by step:
 > git push gerrit task_screen_setup:master
 > git push origin task_screen_setup:master
 
-
+___________________________________________
 Notes:
 Read doc "Rally Observation Guide.doc" for defect handeling.
