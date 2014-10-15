@@ -1,0 +1,13 @@
+
+___________________________________________
+
+
+___________________________________________
+TODO:
+
+How to handle Defects ?
+
+
+___________________________________________
+Notes:
+Read doc "Rally Observation Guide.doc" for defect handeling.

@@ -29,6 +29,17 @@ To create VisualStudio solution.
 - build/run "S5Mon" project.
 
 
+---
+- change startup project from "ALL_BUILD" to "S5Mon"
+- set dependancy to "runtime" project, i.e. build it first.
+- build "ALL_BUILD" solution<
+#- change General->Output directory to smth like :
+#    "D:/dev/esp_main_trank/build/local-debug/_temp"
+#  where "local-debug" is mostly builded project.
+
+- change "S5Mon" property:
+  "D:/dev/esp_main_trank/build/VisualStudio/Debug"
+
 ___________________________________________
 VisualStudio in use:
 

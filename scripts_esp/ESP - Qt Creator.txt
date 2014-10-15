@@ -17,6 +17,20 @@ When open file "CMakeList.txt", use follow keys:
 -DDBG_FLAG=ON 
 
 ___________________________________________
+Debugging setup:
+
+- Install "Debugging Tool for Windows" from 
+"Standalone Debugging Tools for Windows (WinDbg)"
+- To add cdb.exe:
+- goto "Tools->Options->Build&Run->Debuggers"
+- Press "Add" 
+- select "C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86\cdb.exe"
+- give a name, i.e. "The Debugger"
+- Press "Apply"
+- goto "Tools->Options->Build&Run->Kits"
+- Select "The Debugger" from drop-down list "Debugger" 
+
+___________________________________________
 TODO:
 
 ___________________________________________

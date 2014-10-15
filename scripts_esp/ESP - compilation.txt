@@ -34,18 +34,6 @@ CMAKE:
     > ninja -j 8 # for set number of cores used for building.
 # this will start actual building and create executable files S5Mon.exe for MAX, etc.
 
-3. To create VisualStudio solution.
-- goto "build" folder
-- create there folder named "VisualStudio"
-- goto "VisualStudio" folder
-- to create solution run:
-    > cmake -G "Visual Studio 10 2010" ..\..\
-- open newly created solution "S5Mon.sln"
-- change startup project from "ALL_BUILD" to "S5Mon"
-- change General->Output directory to smth like :
-    "D:/dev/esp_main_trank/build/local-debug/_temp"
-  where "local-debug" is mostly builded project.
-  
 ___________________________________________
 VisualStudio in use:
 
