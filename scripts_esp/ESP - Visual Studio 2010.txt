@@ -1,19 +1,6 @@
 HowTo: Visual Studio build and compile.
 
 
--- Startup with the project
-
-1. 
-2. 
-3. 
-4. 
-
-
--- Compile the project
-1. 
-2. 
-3. 
-4. 
 ___________________________________________
 To create VisualStudio solution.
 - create "build" folder in ESP root folder;
@@ -23,24 +10,31 @@ To create VisualStudio solution.
 - to create solution run:
     > cmake -G "Visual Studio 10 2010" ..\..\
 - open newly created solution "S5Mon.sln"
-- build "ALL_BUILD" project
-- build "" project (for DLLs creation)
 - change startup project from "ALL_BUILD" to "S5Mon"
+- change "S5Mon" properties->Debugging->Working Directory:
+    from  "$(ProjectDir))" to "$(ProjectDir)MAX" (see Notes below)
+    or "FLEX", "LITE", "PPD" in place of MAX if you want to use other than MAX runtime files.
+- set "S5Mon" dependancy to "runtime" project, i.e. build it first.
+- build "runtime" anyway
 - build/run "S5Mon" project.
+- use VS2010 as debugger.
+__________________________________________
+Notes:
+if use "$(ProjectDir)\MAX":
+ERROR: "$(ProjectDir)\\MAX is not a valid working directory"
+change to "$(ProjectDir)MAX" -- no slash!
 
 
----
+__________________________________________
+Draft:
+- build "ALL_BUILD" project
 - change startup project from "ALL_BUILD" to "S5Mon"
 - set dependancy to "runtime" project, i.e. build it first.
-- build "ALL_BUILD" solution<
+- build "ALL_BUILD" solution
 #- change General->Output directory to smth like :
 #    "D:/dev/esp_main_trank/build/local-debug/_temp"
 #  where "local-debug" is mostly builded project.
-
-- change "S5Mon" property:
-  "D:/dev/esp_main_trank/build/VisualStudio/Debug"
-
-___________________________________________
+__________________________________________
 VisualStudio in use:
 
 1. VisualStudio run S5mon in simulation mode:
@@ -56,18 +50,8 @@ VisualStudio in use:
 > devenv.exe /debugexe ./S5Mon.exe -pod -unid -screens 1
 ___________________________________________
 TODO:
--- Compile the project
-    1. 
-    2. 
--- Run and debug
-    1. 
-    2. 
-    3. 
-
 -- Unittest not supported
 -- Tips and tricks
-
-
 ___________________________________________
 The vim settings todo on startup:
 
