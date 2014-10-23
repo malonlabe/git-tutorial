@@ -140,9 +140,13 @@ git config --system core.autocrlf true
 git reset --hard
 
 ___________________________________________
-grep ERROR example.txt | wc -l
-REM: this count words ERROR in file example.txt.
+Bisect:
+- look out when word "ERROR" first appears in the file.
+- use bisect:
+> git bisect start HEAD origin/initial
 
-___________________________________________
-- how to use bisect:
-git bisect start HEAD origin/initial
+REM: follow count words ERROR in file example.txt:
+> grep ERROR example.txt | wc -l
+
+- to return to previous status:
+> git bisect reset 
