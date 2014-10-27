@@ -1,6 +1,10 @@
 @ECHO OFF
 REM
 REM Yuriy Senishch. OCT-2014
+REM
+REM Script implements bisect routine for a git repository, 
+REM by searching a word in a given file.
+REM
 REM EQU - equal
 REM NEQ - not equal
 REM LSS - less than
@@ -10,12 +14,12 @@ REM GEQ - greater than or equal
 REM
 REM
 
+REM OK_TOKEN is unique word from the git output message when search is _complete_.
+set OK_TOKEN=first
 set TARGET_ID=ERROR
 set TARGET_FILE=example.txt
 set RES_FILE=res.log
 set RES_FILE_GIT=res_git.log
-REM OK_TOKEN is unique word from the git output message when search is complete.
-set OK_TOKEN=first
 set ITERATION_NUM=1
 
 if -%1==- goto NoParam
@@ -25,6 +29,9 @@ goto START
 
 :START
 call TDiff.exe
+REM This is a safety block. Remove it for use a script
+echo Script is blocked due to safety! Edit it first in order to use.
+goto END
 
 echo --------------------------------------------------------
 REM call %MAIN_ACTION%
