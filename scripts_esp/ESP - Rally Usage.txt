@@ -11,3 +11,6 @@ How to handle Defects ?
 ___________________________________________
 Notes:
 Read doc "Rally Observation Guide.doc" for defect handeling.
+
+OCT-2014.New sitw (SSO login)
+https://sso.rallydev.com/sp/startSSO.ping?PartnerIdpId=gefssprd. 
