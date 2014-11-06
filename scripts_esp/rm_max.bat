@@ -1,15 +1,12 @@
 @ECHO OFF
 REM
-REM Script "Run S5Mon EXE file" in unittest for ESP
-REM component from command line using "build" Perl script.
+REM Script to erase S5Mon EXE file
 REM 
-REM Yuriy Senishch. OCT-2014
+REM Yuriy Senishch. NOV-2014
 REM
-@echo off
 
 set MAIN_OBJ=S5Mon.exe
 set TARGET_DIR=MAX
-REM unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 
 if -%1==- goto NoParam
 goto START 
@@ -27,20 +24,17 @@ goto ERROR_NO_EXE_FILE
 
 :TARGET_EXIST
 echo --------------------------------------------------------
-echo start %MAIN_OBJ% ....
-start %MAIN_OBJ%
+echo Erase %MAIN_OBJ% ....
+del %MAIN_OBJ%
 goto CHANGE_DIR_BACK
 
 :ERROR_NO_EXE_FILE
 echo --------------------------------------------------------
-echo BUILD ERROR: file '%MAIN_OBJ%' not exist!
+echo ERASE impossible: file '%MAIN_OBJ%' not exist!
 echo --------------------------------------------------------
 goto CHANGE_DIR_BACK
 
 :CHANGE_DIR_BACK
-echo --------------------------------------------------------
-echo change dir to previous state
-echo --------------------------------------------------------
 cd ..
 
 goto END
