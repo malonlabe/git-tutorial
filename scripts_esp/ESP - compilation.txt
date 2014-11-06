@@ -1,14 +1,18 @@
 ESP - compilation
 ___________________________________________
 CMAKE:
+
 1. With PERL script.
 - use PERL script "esp_builder.pl" from git repo named "csp-tools";
 - add path to script "esp_builder.pl" to a file "build.bat";
 - put file "build.bat" to folder "C:\bin", where all binary are;
 - download sources from GIT repo.
 - goto ESP root directory (where folders "MSF" and "MDN" are)
+
+"REM: This is obsolete since NOV-2014, when OMAKE deprecated!":
 - to create file "CMakeList.txt" run:
     > gencmake
+    
 - to create all service files/folders for compilation run:
     > build -setup
 
@@ -21,8 +25,10 @@ CMAKE:
 
 
 2. With simple 'bat' files.
+"REM: This is obsolete since NOV-2014, when OMAKE deprecated!":
 - Generate CMake files, running:
-    > gencmake
+    > gencmake 
+
 - create folder "build" in ESP root directory;
 - goto "build" and create folder "WindowsDebug";
 - goto "WindowsDebug" and run:

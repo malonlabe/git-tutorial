@@ -1,5 +1,18 @@
 Files I changed:
 
+
+NOV-2014
+___________________________________________
+Task: 
+    US12917 "Bx50 Extreme alarm limits - HR extreme limit on/off switch in Care unit settings". 
+Files:
+    "D:\dev\esp_main_trank\Msf\S5Mon\Code\config\ui\Parameter_alarms_careunit_menu.xml"
+    "D:\dev\esp_main_trank\Msf\S5Mon\Code\localization\EspL10nImport-DALARM.xml"
+    "D:\dev\esp_main_trank\Msf\Code\Msf\Default\DAlarm\CuParamAlarmsMenuModels.cpp"
+    "D:\dev\esp_main_trank\Msf\Code\Msf\Default\DParam\HrLimitAlarms\HrPrAlarmConfig.cpp"
+    "D:\dev\esp_main_trank\Msf\S5Mon\Code\settings\groups\ecg.xml"
+
+
 OCT-2014
 ___________________________________________
 Task: 
