@@ -11,6 +11,9 @@ Integration, step by step:
 
 3. merge set of commits to one (if any):
 > git rebase -i origin/master
+  REM: prefer to use "fixup" in order to avoid edit the commit message.
+  REM: after fixup commit is merged with one above. If above is not desired, replace 
+  REM: comment to fixup under desired one.
 
 4. get latest changes from repository:
 > git fetch

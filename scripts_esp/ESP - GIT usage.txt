@@ -45,6 +45,9 @@ Rebase:
 > git rebase -i origin/master
     - this will run an "interactive" rebase, where you can choose what to do with commits and messages.
 
+> git rebase -i HEAD~2 
+    - this will run an "interactive" rebase, for 2 previous commits.
+
 ___________________________________________
 Gerrit and Continuous Integration.
 
