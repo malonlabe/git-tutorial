@@ -3,8 +3,18 @@ Files I changed:
 
 NOV-2014
 ___________________________________________
+
+Task: 
+    US13101 - "Disable controls when alarm is off". 
+
+Files:
+    "D:\dev\esp_main_trank\Msf\Code\Msf\Default\DECG\UI\Models\EcgMenuModelsFactory.cpp"
+    "D:\dev\esp_main_trank\msf\code\msf\default\dparam\hrlimitalarms\HrPrAlarmConfig.hpp"
+    "D:\dev\esp_main_trank\msf\code\msf\default\dparam\hrlimitalarms\HrPrAlarmConfig.cpp"
+___________________________________________
 Task: 
     US12917 "Bx50 Extreme alarm limits - HR extreme limit on/off switch in Care unit settings". 
+
 Files:
     "D:\dev\esp_main_trank\Msf\S5Mon\Code\config\ui\Parameter_alarms_careunit_menu.xml"
     "D:\dev\esp_main_trank\Msf\S5Mon\Code\localization\EspL10nImport-DALARM.xml"
@@ -42,6 +52,11 @@ Files:
     DAlarm/UnitTests/Test_VerticalLimitView.cpp
 
 
+
+
+
+
+---------------------------------------
 ___________________________________________
 Template:
 ___________________________________________

@@ -8,7 +8,8 @@ REM
 @echo off
 
 set DIR_TO_CREATE=Target
-set TARGET_SLN=S5Mon.sln
+REM set TARGET_SLN=S5Mon.sln
+set TARGET_SLN=ESP.sln
 
 if -%1==- goto NoParam
 goto START 

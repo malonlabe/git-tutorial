@@ -9,7 +9,7 @@ To create VisualStudio solution.
 - goto "VisualStudio" folder
 - to create solution run:
     > cmake -G "Visual Studio 10 2010" ..\..\
-- open newly created solution "S5Mon.sln"
+- open newly created solution "ESP.sln" (old was: S5mon.sln)
 - change startup project from "ALL_BUILD" to "S5Mon"
 - change "S5Mon" properties->Debugging->Working Directory:
     from  "$(ProjectDir))" to "$(ProjectDir)MAX" (see Notes below)
