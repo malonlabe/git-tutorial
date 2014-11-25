@@ -1,0 +1,33 @@
+ESP tasks list:
+
+NOV-2014 - "US12987 Robot Configuration API support for HR extreme limit settings". 
+    Result: 
+    - 
+    
+NOV-2014 - "US13101 - Disable controls when alarm is off". 
+    Result: 
+    - Done and commited
+
+NOV-2014 - "US12917 Bx50 Extreme alarm limits - HR extreme limit on/off switch in Care unit settings"
+    Result: 
+    - Done and commited
+
+OCT-2014 - "DE335 - When the ECG Setup menu is opened the error is logged". 
+    Result: 
+    - case closed because no reason to spend time for test 26 SW objects ;
+    - minor impact to the enf-user, he will never realize existing of this error;
+
+SEP-2014 - "DE167 - Crash Open SpO2 Alarms Menu" 
+    Result:
+    - Done and commited
+    - Fix Zero division in VerticalLimit class. 
+
+SEP-2014 - "DE85 - Focus Crash Fix"
+    Result:
+    - Done and commited
+    - Fix crash after focus changed. 
+
+JUN-2014 - "Alarm refactoring"
+    - Done and commited
+
+FEB-APR ????    
