@@ -23,7 +23,7 @@ Notes:
 if use "$(ProjectDir)\MAX":
 ERROR: "$(ProjectDir)\\MAX is not a valid working directory"
 change to "$(ProjectDir)MAX" -- no slash!
-
+use direct path: "D:\dev\esp_main_trank\build\VisualStudio\MAX"
 
 __________________________________________
 Draft:

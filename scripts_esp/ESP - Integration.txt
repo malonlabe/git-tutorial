@@ -39,3 +39,6 @@ Integration, step by step:
 ___________________________________________
 Notes:
 Read doc "Rally Observation Guide.doc" for defect handeling.
+
+web site for adding review:
+"http://czc3025gt7.clients.em.health.ge.com/gerrit/#/"
