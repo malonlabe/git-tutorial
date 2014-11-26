@@ -4,10 +4,12 @@ REM Script "Run S5Mon EXE file" in unittest for ESP
 REM component from command line using "build" Perl script.
 REM 
 REM Yuriy Senishch. OCT-2014
+REM Add: PARAM -pod. For using with EMBS. NOV-2014
 REM
 @echo off
 
 set MAIN_OBJ=S5Mon.exe
+set PARAM=-pod
 set TARGET_DIR=MAX
 REM unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 
@@ -27,8 +29,8 @@ goto ERROR_NO_EXE_FILE
 
 :TARGET_EXIST
 echo --------------------------------------------------------
-echo start %MAIN_OBJ% ....
-start %MAIN_OBJ%
+echo start %MAIN_OBJ% %PARAM%....
+start %MAIN_OBJ% %PARAM%
 goto CHANGE_DIR_BACK
 
 :ERROR_NO_EXE_FILE
