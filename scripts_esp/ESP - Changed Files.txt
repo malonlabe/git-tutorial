@@ -2,6 +2,14 @@ Files I changed:
 
 
 NOV-2014
+__________________________________________
+
+Task: 
+    US6303 - "UI Dump - Alarm silence view dump". 
+
+Files:
+1.
+2.
 ___________________________________________
 
 Task: 

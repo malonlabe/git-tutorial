@@ -1,8 +1,12 @@
 ESP tasks list:
 
-NOV-2014 - "US12987 Robot Configuration API support for HR extreme limit settings". 
+NOV-2014 - "US6303 - UI Dump - Alarm silence view dump". 
     Result: 
     - 
+
+NOV-2014 - "US12987 Robot Configuration API support for HR extreme limit settings". 
+    Result: 
+    - Done and commited
     
 NOV-2014 - "US13101 - Disable controls when alarm is off". 
     Result: 
@@ -30,4 +34,4 @@ SEP-2014 - "DE85 - Focus Crash Fix"
 JUN-2014 - "Alarm refactoring"
     - Done and commited
 
-FEB-APR ????    
+FEB-APR ????
