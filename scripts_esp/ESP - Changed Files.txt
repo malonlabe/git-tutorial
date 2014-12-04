@@ -8,8 +8,8 @@ Task:
     US6303 - "UI Dump - Alarm silence view dump". 
 
 Files:
-1.
-2.
+1. "D:\dev\esp_main_trank\Msf\Code\Msf\Ui\MsgField\AlarmSilenceView.hpp"
+2. "D:\dev\esp_main_trank\Msf\Code\Msf\Ui\MsgField\AlarmSilenceView.cpp"
 ___________________________________________
 
 Task: 
@@ -20,7 +20,7 @@ Files:
 2. "AlarmPrioritySerializer.cpp" - add functions that return const char "INFO", etc.
 3. "ExtremeHrAlarm.cpp" - change strings "Low" to functions calls " DAlarm::AlarmPrioritySerializer::getLowPriorityStr()"
 4. "HrPrAlarmConfig.cpp" - add whitespaces to settings anmes, like "X Tachy Create Snapshot"
-5. "ecg.xml" - add whitespaces to settings anmes, like "X Tachy Create Snapshot" 
+5. "ecg.xml" - add whitespaces to settings names, like "X Tachy Create Snapshot" 
    
 ___________________________________________
 

@@ -1,6 +1,11 @@
 Unittest notes.
+________________________________________
+1. To check file(s) change percentage run follow command from repository root:
+    > diffchangepercentage.bat origin/master
 
-
+REM: "diffchangepercentage.bat" is a script located in "csp-tools\bin"
+      and it has to be in %PATH%
+________________________________________
 --- For unittests preferrably use a folder with "coverage" in its name.
 --- Perl script "build" will turn coverage "cov01 --on" automatically
 
@@ -40,6 +45,12 @@ Unittest implementation notes:
 - 
 
 
+Example:
+unittest for: "MsgField",  class: "AlarmSilenceView"
+1. create file "Test_AlarmSilenceView.cpp"
+2. create file "Test_AlarmSilenceView.hpp"
+3. add "Test_AlarmSilenceView.hpp" to makefile in ...???
+
 ________________________________________
 Unittest - bullseye coverage:
 
@@ -56,7 +67,8 @@ http://hce-czc3357z9m.clients.em.health.ge.com:8080/doxygen/class_msf_1_1_model_
 
 
 ________________________________________
-REM: This is obsolete start from SEP-2014.
+REM: This is "obsolete" start from SEP-2014.
+REM: Do not use any 
 
 unittest using OMAKE:
 
