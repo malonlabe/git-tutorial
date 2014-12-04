@@ -14,7 +14,9 @@ REM
 @echo off
 
 set ACTION_TO_DO=unittest
-set COMPONENT=DAlarm
+REM set COMPONENT=DAlarm
+REM set COMPONENT=DExtComm
+set COMPONENT=DExtComm
 set COMPILER=build
 set MAIN_OBJ=unittests\%COMPONENT%\%COMPONENT%TestRunner.exe
 

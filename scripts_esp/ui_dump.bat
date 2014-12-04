@@ -26,7 +26,8 @@ set MAIN_OBJ=uidump.py
 set ROBOT_PATH=Depot\YS\CSP\Robot\sources\tools\
 
 REM set PARAM_AREA=AREA_SOFTKEY
-set PARAM_AREA=AREA_PATDATA
+REM set PARAM_AREA=AREA_PATDATA
+set PARAM_AREA=AREA_MSG
 REM set EXTRA_PARM=AlarmMsg1
 
 set TARGET_DIR=MAX
@@ -79,8 +80,8 @@ goto OPEN_RESULT_FILE
 
 :OPEN_RESULT_FILE
 echo --------------------------------------------------------
-echo calling %EDITOR% %CURRENT_DIR%\%RESULT_FILE%
-start %EDITOR% %CURRENT_DIR%\%RESULT_FILE%
+REM echo calling %EDITOR% %CURRENT_DIR%\%RESULT_FILE%
+REM start %EDITOR% %CURRENT_DIR%\%RESULT_FILE%
 
 goto END
 

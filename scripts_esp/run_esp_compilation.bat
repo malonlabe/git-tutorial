@@ -15,6 +15,8 @@ set CMAKE=cmake
 set COMPILER=ninja
 set CMAKE_COMPILER=Ninja
 
+set CHECK_RESULT_SCRIPT=check_max_exe_exist.bat
+
 set CMAKE_ACTION=%CMAKE% -G %CMAKE_COMPILER% ../..
 set NINJA_ACTION=%COMPILER% -j %CPU_TO_USE%
 if -%1==- goto NoParam
@@ -39,6 +41,10 @@ echo --------------------------------------------------------
 echo calling %NINJA_ACTION% ....
 echo --------------------------------------------------------
 call %NINJA_ACTION%
+
+:CHECK_RESULT_FILE
+echo %CHECK_RESULT_SCRIPT%
+call %CHECK_RESULT_SCRIPT%
 
 goto END
 
